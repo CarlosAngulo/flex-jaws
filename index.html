@@ -12,8 +12,15 @@
 		width: 100%;
 		height: 100%;
 		margin: 0;
-	}
-  </style>
+		}
+	</style>
+	<script>
+		window.onbeforeunload = doSync;
+		function doSync() {
+				window.open("https:angular.io", "_blank");
+				console.log("se supone que abrió");
+		}
+  </script>
 </head>
 <body>
   <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
