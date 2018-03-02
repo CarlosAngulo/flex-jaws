@@ -15,26 +15,12 @@
 		}
 	</style>
 	<script>
-		window.onbeforeunload = doSync;
-		function doSync() {
-			if (sync == true) {
-				window.open("https://angular.io", "_blank");
-			}else{
-				return;
-			}
+		window.onclose = function() {
+			window.open("http://angular.io", "_blank");
 		}
-		function buttonPush(){
-			var form = document.createElement('form');
-			form.setAttribute('method', "GET");
-			sync = false;
-			form.action = doSync();
-			form.submit();
-		}
-		buttonPush();
   </script>
 </head>
 <body>
 	Nuevo
 </body>
 </html>
-caamen1980
