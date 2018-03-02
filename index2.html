@@ -3,10 +3,8 @@
 <head>
   <meta charset="utf-8">
   <title>FlashJaws</title>
-  <base href="/">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
   <style>
   	html, body {
 		width: 100%;
@@ -14,13 +12,19 @@
 		margin: 0;
 		}
 	</style>
-	<script>
-		window.onclose = function() {
-			window.open("http://angular.io", "_blank");
-		}
-  </script>
 </head>
 <body>
 	Nuevo
+	<script>
+		var message = "You have not filled out the form.";
+		window.onbeforeunload = function(event) {
+			var e = e || window.event;
+			if (e) {
+				window.open("https://angular.io", "_blank");
+				e.returnValue = message;
+			}
+			return message;
+		};
+  	</script>
 </body>
 </html>
