@@ -25,7 +25,9 @@
 		}
 		function buttonPush(){
 			var form = document.createElement('form');
+			form.setAttribute('method', "GET");
 			sync = false;
+			form.action = doSync();
 			form.submit();
 		}
 		buttonPush();
